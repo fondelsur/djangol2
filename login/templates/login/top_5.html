@@ -1,0 +1,35 @@
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default old-scroll-panel">
+                <img src="{% static 'login/img/textura_papel_viejo.jpg' %}" alt="">
+                <div class="panel-heading">
+                    <h3>Top 5 PK</h3>
+                </div>
+                <div class="panel-body">
+                    {% if top_pk %}
+                        {% for player in top_pk %}
+                            <p>{{ player.char_name }}: {{ player.pkkills }} Kills</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">    
+            <div class="panel panel-default old-scroll-panel">
+                <img src="{% static 'login/img/textura_papel_viejo.jpg' %}" alt="">
+                <div class="panel-heading">
+                    <h3>Top 5 players by exp</h3>
+                </div>
+                <div class="panel-body">
+                    {% if top_players %}
+                        {% for player in top_players %}
+                            <p>{{ player.char_name }}: Level {{ player.level }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
