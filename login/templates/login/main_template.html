@@ -11,7 +11,12 @@
         <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700" rel="stylesheet">
 
         <!-- SCRIPTS -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>        
+        <script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script> 
+        <script src="{% static 'login/js/summonmodal.js' %}" charset="utf-8"></script>       
         {% block extra_static %}
         {% endblock %}
     </head>
@@ -40,6 +45,7 @@
                     {% block top5 %}
                         {% include 'login/top_5.html' with top_players=top_players top_pk=top_pk%}
                     {% endblock %}
+    
                 </section>
                 <section class="specs">
                     {% block specs %}
@@ -59,4 +65,5 @@
             </div>
         </div>
     </body>
+    {% include 'login/start.html' with form=login_form %}
 </html>

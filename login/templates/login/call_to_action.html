@@ -1,5 +1,9 @@
 <div class="container cta">
+        {% if user.is_authenticated %}
+         <h1> Bienvenido {{ user.username }}</h1>
+        {% else %}
         <h1>Retoma tu espada, defiende tu honor. Lucha por la vida.</h1>
         <h1>Únete a la vieja guardia</h1>
         <a href="{% url 'create' %}">Regístrate</a>
+        {% endif %}
 </div>

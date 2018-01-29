@@ -530,25 +530,25 @@ class CharacterVariables(models.Model):
 
 class Characters(models.Model):
     account_name = models.CharField(max_length=45, blank=True, null=True)
-    charid = models.IntegerField(db_column='charId', primary_key=True)  # Field name made lowercase.
+    charid = models.IntegerField(db_column='charId', primary_key=True)
     char_name = models.CharField(max_length=35)
     level = models.IntegerField(blank=True, null=True)
-    maxhp = models.IntegerField(db_column='maxHp', blank=True, null=True)  # Field name made lowercase.
-    curhp = models.IntegerField(db_column='curHp', blank=True, null=True)  # Field name made lowercase.
-    maxcp = models.IntegerField(db_column='maxCp', blank=True, null=True)  # Field name made lowercase.
-    curcp = models.IntegerField(db_column='curCp', blank=True, null=True)  # Field name made lowercase.
-    maxmp = models.IntegerField(db_column='maxMp', blank=True, null=True)  # Field name made lowercase.
-    curmp = models.IntegerField(db_column='curMp', blank=True, null=True)  # Field name made lowercase.
+    maxhp = models.IntegerField(db_column='maxHp', blank=True, null=True)
+    curhp = models.IntegerField(db_column='curHp', blank=True, null=True)
+    maxcp = models.IntegerField(db_column='maxCp', blank=True, null=True)
+    curcp = models.IntegerField(db_column='curCp', blank=True, null=True)
+    maxmp = models.IntegerField(db_column='maxMp', blank=True, null=True)
+    curmp = models.IntegerField(db_column='curMp', blank=True, null=True)
     face = models.IntegerField(blank=True, null=True)
-    hairstyle = models.IntegerField(db_column='hairStyle', blank=True, null=True)  # Field name made lowercase.
-    haircolor = models.IntegerField(db_column='hairColor', blank=True, null=True)  # Field name made lowercase.
+    hairstyle = models.IntegerField(db_column='hairStyle', blank=True, null=True)
+    haircolor = models.IntegerField(db_column='hairColor', blank=True, null=True)
     sex = models.IntegerField(blank=True, null=True)
     heading = models.IntegerField(blank=True, null=True)
     x = models.IntegerField(blank=True, null=True)
     y = models.IntegerField(blank=True, null=True)
     z = models.IntegerField(blank=True, null=True)
     exp = models.BigIntegerField(blank=True, null=True)
-    expbeforedeath = models.BigIntegerField(db_column='expBeforeDeath', blank=True, null=True)  # Field name made lowercase.
+    expbeforedeath = models.BigIntegerField(db_column='expBeforeDeath', blank=True, null=True)
     sp = models.IntegerField()
     karma = models.IntegerField(blank=True, null=True)
     fame = models.IntegerField()
@@ -590,7 +590,6 @@ class Characters(models.Model):
         return self.char_name
     
     class Meta:
-        managed = False
         db_table = 'characters'
 
 
